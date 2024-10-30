@@ -4,7 +4,7 @@ const app = express();
 
 // Mapa de videos con sus respectivos IDs y claves de encriptación
 const videoMap = {
-  video1: { id: 'OmQGCAza', key: 'VBWcHgnr62pDrtB_nQNbUQ' },  // Primer video
+  video1: { id: 'iqoXzIYa', key: 'nEuDpa1xbmXi5NhYT3ngjtfqsXZYzjusjg7SpFoghVM' },  // Primer video
   video2: { id: 'OtroID1', key: 'OtraClave1' },               // Segundo video
   video3: { id: 'OtroID2', key: 'OtraClave2' },               // Tercer video
   video4: { id: 'OtroID3', key: 'OtraClave3' },               // Cuarto video
