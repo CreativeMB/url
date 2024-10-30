@@ -1,5 +1,5 @@
 {
-  "name": "mi-aplicacion-web",
+  "name": "fulltvurl",
   "version": "1.0.0",
   "description": "Servidor para retransmitir videos de MEGA con Node.js y Express",
   "main": "server.js",
