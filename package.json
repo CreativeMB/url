@@ -1,11 +1,32 @@
 {
-  "name": "nombre-de-tu-aplicacion",
+  "name": "mi-aplicacion-web",
   "version": "1.0.0",
-  "main": "index.js",  // Cambia 'index.js' por el archivo principal de tu aplicación
+  "description": "Una aplicación web sencilla con Node.js y Express",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"  // Cambia 'index.js' por el archivo principal de tu aplicación
+    "start": "node server.js",
+    "dev": "nodemon server.js" // Usa nodemon para desarrollo
   },
   "dependencies": {
-    // Aquí se agregarán las dependencias de tu proyecto
-  }
+    "express": "^4.18.2", // Framework web para Node.js
+    "cors": "^2.8.5",     // Middleware para habilitar CORS
+    "dotenv": "^16.0.3"   // Cargar variables de entorno desde un archivo .env
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"   // Herramienta para reiniciar automáticamente el servidor en desarrollo
+  },
+  "engines": {
+    "node": ">=14.0.0"     // Especifica la versión mínima de Node.js
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuusuario/tu-repositorio.git" // Cambia esto por tu repositorio
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "web"
+  ],
+  "author": "CreativeMB", // Cambia por tu nombre
+  "license": "GPL-3.0"       // Tipo de licencia
 }
