@@ -1,14 +1,17 @@
 const express = require('express');
 const mega = require('megajs');
+const cors = require('cors');
 const app = express();
+
+// Habilitar CORS
+app.use(cors());
 
 // Mapa de videos con sus respectivos IDs y claves de encriptación
 const videoMap = {
-  video1: { id: 'iqoXzIYa', key: 'nEuDpa1xbmXi5NhYT3ngjtfqsXZYzjusjg7SpFoghVM' },  // Primer video
-  video2: { id: 'OtroID1', key: 'OtraClave1' },               // Segundo video
-  video3: { id: 'OtroID2', key: 'OtraClave2' },               // Tercer video
-  video4: { id: 'OtroID3', key: 'OtraClave3' },               // Cuarto video
-  // Agrega más videos aquí conforme sea necesario
+  video1: { id: 'iqoXzIYa', key: 'nEuDpa1xbmXi5NhYT3ngjtfqsXZYzjusjg7SpFoghVM' }, 
+  video2: { id: 'OtroID1', key: 'OtraClave1' },               
+  video3: { id: 'OtroID2', key: 'OtraClave2' },               
+  video4: { id: 'OtroID3', key: 'OtraClave3' },               
 };
 
 // Endpoint dinámico para transmitir videos
@@ -22,10 +25,8 @@ app.get('/stream/:videoId', (req, res) => {
       key: video.key
     });
 
-    // Configura la cabecera para streaming
     res.writeHead(200, { 'Content-Type': 'video/mp4' });
 
-    // Manejo de errores durante la descarga
     file.download()
       .on('error', (err) => {
         console.error('Error downloading file:', err);
