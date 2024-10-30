@@ -35,3 +35,9 @@ app.get('/stream/:videoId', (req, res) => {
 // Configuración del servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+file.download().on('error', (err) => {
+  console.error('Error downloading file:', err);
+  res.status(500).send('Error downloading video');
+}).pipe(res);
+
