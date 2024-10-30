@@ -21,12 +21,17 @@ app.get('/stream/:videoId', (req, res) => {
       downloadId: video.id,
       key: video.key
     });
-    
+
     // Configura la cabecera para streaming
     res.writeHead(200, { 'Content-Type': 'video/mp4' });
-    
-    // Descarga y retransmite el archivo en tiempo real
-    file.download().pipe(res);
+
+    // Manejo de errores durante la descarga
+    file.download()
+      .on('error', (err) => {
+        console.error('Error downloading file:', err);
+        res.status(500).send('Error downloading video');
+      })
+      .pipe(res);
   } else {
     res.status(404).send('Video not found');
   }
@@ -35,9 +40,3 @@ app.get('/stream/:videoId', (req, res) => {
 // Configuración del servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-file.download().on('error', (err) => {
-  console.error('Error downloading file:', err);
-  res.status(500).send('Error downloading video');
-}).pipe(res);
-
