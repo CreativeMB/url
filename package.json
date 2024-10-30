@@ -1,0 +1,11 @@
+{
+  "name": "nombre-de-tu-aplicacion",
+  "version": "1.0.0",
+  "main": "index.js",  // Cambia 'index.js' por el archivo principal de tu aplicación
+  "scripts": {
+    "start": "node index.js"  // Cambia 'index.js' por el archivo principal de tu aplicación
+  },
+  "dependencies": {
+    // Aquí se agregarán las dependencias de tu proyecto
+  }
+}
