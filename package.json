@@ -10,7 +10,7 @@
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3",  // Agrega la coma aquí
+    "dotenv": "^16.0.3",
     "megajs": "^1.3.3"
   },
   "devDependencies": {
